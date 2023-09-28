@@ -1,0 +1,31 @@
+---
+title: "Planned Revisions to Reproduction of Chakraborty (2021)"
+author: "Elise Chan"
+output: html_document
+date: "2023-09-28"
+---
+
+## Analysis: Proposed Modifications
+To improve the Covid-19 Disability correlation study originally done by Chakraborty (2021), I plan to implement the following changes:
+  1. Fix the color ramp of the county weights choropleth map (line 1850). (by adjusting color ramp midpoint)
+  2. Improve the format of the "missing data" table using Kable/KableExtra and/or flipping the orientation of the table (line 351).
+  3. *add comments to clarify confusing sections of code.
+
+
+## Results: Visualization and Interpretation
+  1. The new color ramp will have a wider range of values and will allow for smaller weight increments to be displayed on the map.
+  2. Reformatting the data table will make all of the data visible
+  3.  
+
+
+## Discussion
+
+  1. My revised 
+  2. make it look like the other data tables, can see everything
+
+Describe how you will interpret the results of your changes here.
+For example, in hypothetical terms, if my new/revised map shows ---, it will mean that ---.
+
+
+save as docs/reports/<name>-analysis-plan.md, e.g. docs/reports/holler-analysis-plan.md
+commit the plan and push to GitHub
