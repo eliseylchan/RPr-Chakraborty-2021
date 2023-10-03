@@ -364,9 +364,9 @@ filter(acs_covid, is.na(bpov_pct)) %>% st_drop_geometry() %>% kable()
 
 ```
 
-```{r}
-#Revised Kable Table
+### Revised Missing Data table
 
+```{r}
 missing_data <- acs_covid %>% 
   filter(is.na(bpov_pct)) %>% 
   st_drop_geometry()
@@ -385,6 +385,8 @@ missing_data %>%
 ```
 
 ## Map COVID-19 incidence
+
+#### Figure 1. 
 
 Map the county level distribution of COVID-19 incidence rates, comparing to Figure 1 of the original study.
 
@@ -409,6 +411,8 @@ tm_covid_rates
 ```
 
 ## Map disability rates
+
+#### Figure 2.
 
 **Unplanned deviation for reproduction**: We also map the spatial distribution of the percent of people with any disability to improve our understanding of the geographic patterns and relationships of between the overarching independent variable (percentage of people with disability) and the dependent variable (COVID-19 incidence rate).
 
@@ -687,6 +691,8 @@ Instabilities between the parametric and non-parametic correlations arise from v
 Some difference may also be attributable to the 13 counties with data errors in the COVID-19 Incidence Rate.
 In such distributions, outlier observations have more weight in the parametric Person's R test than in the non-parametric Spearman's Rho test.
 
+#### Figure 3.
+
 ```{r plot-bivariate, fig.width=4, fig.height=4}
 plot(acs_covid$native_pct,
   acs_covid$covid_rate,
@@ -861,6 +867,8 @@ acs_covid <- acs_covid[, 1:which(colnames(acs_covid) == "or_incidence")] %>%
 
 **Planned deviation for reproduction**: Map the `SpatialEpi` cluster results.
 
+#### Figure 4.
+
 ```{r map-clusters}
 tm_spatialepi_clusters <-
   tm_shape(state) +
@@ -939,6 +947,8 @@ acs_covid <- acs_covid %>%
 
 First, map the spatial distribution of local relative risk score classifications.
 
+#### Figure 5.
+
 ```{r map local relative risk score}
 # count the frequency of counties in each class and create labels
 class_freq <- acs_covid %>% st_drop_geometry() %>% count(loc_class)
@@ -977,6 +987,8 @@ tm_spatialepi_local_risk_class
 
 Next, map the cluster relative risk scores for comparison.
 Note that following the original study classification methodology, counties outside of clusters are assigned the lowest risk class of `1`.
+
+#### Figure 6.
 
 ```{r map-cluster-relative-risk-classes}
 # count the frequency of counties in each class and create labels
@@ -1114,6 +1126,8 @@ rm(satscan_rpr_col_t)
 ```
 
 **Unplanned deviation for reproduction**: Visualize the spatial distribution of the author-provided Kulldorff COVID-19 Clusters.
+
+#### Figure 7.
 
 ```{r map--author-clusters}
 # count frequencies of each cluster type
@@ -1259,6 +1273,8 @@ It was necessary to divide the Hierarchical clusters from the GINI clusters to a
 
 Compare the SaTScan Hierarchical clusters to the SpatialEpi clusters.
 
+#### Figure 8.
+
 ```{r hierarchical-cluster-comparison-map, message = F}
 hier_clusters <- acs_covid %>%
   mutate(xcluster = case_when(
@@ -1303,6 +1319,8 @@ The two methods only agree on the definition of the largest clusters in distant 
 Thereafter, SpatialEpi detects many secondary clusters in the vicinity of the largest ones, while SaTScan detects seven isolated and low-probability counties.
 
 Compare the SaTScan GINI Optimized clusters to the SpatialEpi clusters.
+
+#### Figure 9.
 
 ```{r gini-cluster-comparison-map, message = F}
 gini_clusters <- acs_covid %>%
@@ -1658,7 +1676,8 @@ onegee <- function(gee_data, dep_var, id, term_names) {
 Calculate GEE models with: - Clustering: SaTScan cluster centers & State ID - Dependent variable: original COVID-19 incidence (including errors).
 
 ```{r gee-original-clusters-original-incidence}
-gee_or_clus_ordep <- gee_data %>% onegee(
+gee_or_clus_ordep <- gee_data %>% 
+                    onegee(
                     dep_var = "or_incidence",
                     id = gee_data$ss_clusID,
                     term_names = table2$term)
@@ -1716,6 +1735,8 @@ gee_rp_clus_rpdep$coefficients %>%
 ### Compare GEE results
 
 **Unplanned deviation for reanalysis**: Generate dot-and-whisker plot of coefficients for each of the model variations for efficient visual comparison of coefficients across each model.
+
+#### Figure 10.
 
 ```{r dotwhisker-comparison, message=FALSE}
 # create summary data frame compatible with dotwhisker package functions
@@ -1778,6 +1799,8 @@ Conversely, some robustly negative coefficients indicate people with disabilitie
 Counter-intuitively, the two coefficients for elderly people with disability were also robustly negative.
 
 ### Interpret GEE Model
+
+#### Figure 11.
 
 ```{r residuals}
 # create data frame with residuals
@@ -1869,6 +1892,8 @@ gee_resid <- gee_resid %>%
 ```
 
 Map each county's weight in GEE model.
+
+#### Figure 12.
 
 ```{r map-weights}
 tm_gee_weights <- tm_shape(gee_resid) +
