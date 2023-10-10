@@ -386,7 +386,7 @@ missing_data %>%
 
 ## Map COVID-19 incidence
 
-#### Figure 1. 
+#### Figure 1.
 
 Map the county level distribution of COVID-19 incidence rates, comparing to Figure 1 of the original study.
 
@@ -2009,22 +2009,22 @@ We re-classified the GEE clustering IDs based on state and cluster relative risk
 Upon discovering different results in all of our reproduction GEE models compared to the original study, we added new models to assess the extent to which the different computational environment was causing differences in our results.
 We therefore ran another set of the five GEE models using data provided by the original author, expecting to find identical results.
 
-# Emily's Discussion
+## Comparing the original and reproduced studies
 
 Our reproduction of the original study was partially successful, leading to similar, but inexact results compared to the original study.
 A portion of the inexactitude may be attributed to differences in the computational environments.
 However, we have also reanalyzed the study and tested its robustness by changing some research parameters.
 Our results suggest support for the conclusions of the original study, but also emphasize the importance of reproduction studies to critically review the full details of the research design, to evaluate internal validity, and to test for uncertainty and robustness to key parameters.
 
-The choropleth map we made in the **first part** of the reproduction analysis (Figure 2) reveals an identical spatial pattern to that of the original study's Figure 1, confirming the equivalence of our dependent variable with that of the original study.
+The choropleth map (Figure 1) we made in the data part of the reproduction analysis reveals an identical spatial pattern to that of the original study's Figure 1, confirming the equivalence of our dependent variable with that of the original study.
 Both maps revealed that COVID-19 cases were distributed unevenly across space.
 In particular, cases were more prevalent in the southern part of the country, in the metropolitan areas of the northeast, Chicago, and California, and in some rural areas, including eastern Washington, New Mexico, and Iowa.
-Prior to Chakraborty's bivariate analysis of disability and COVID-19 incidence, we also mapped the spatial distribution of disability (Figure 3).
+Prior to Chakraborty's bivariate analysis of disability and COVID-19 incidence, we also mapped the spatial distribution of disability (Figure 2).
 This spatial visual analysis reveals many regions in which disability rates are high but COVID-19 incidence was still low, including rural New England, Appalachia, and northern Michigan.
 Conversely, many hotspots of COVID-19 incidence had low rates of disability, including metropolitan New England, South Florida, and Chicago.
 The two spatial distributions help explain the negative bivariate relationship between disability rates and COVID-19 incidence.
 
-The summary statistics for the **second part** of the reproduction analysis matched perfectly with those of the original study, confirming that the reproduction uses identical original data.
+The summary statistics for the analytical partof the reproduction analysis matched perfectly with those of the original study, confirming that the reproduction uses identical original data.
 The original study used Pearson's correlation to test bivariate relationship between variables that are non-normally distributed, and we revised this to use the nonparametric Spearman's correlation coefficient.
 Our reanalysis of the correlations generally found identical directions and increased magnitudes, confirming the bivariate correlations and significance levels of most of the socio-demographic subcategories.
 However, biological sex may not be correlated with COVID-19 incidence rates, as the percentage of females with disabilities changes direction and significance.

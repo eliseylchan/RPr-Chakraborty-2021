@@ -15,7 +15,7 @@ To improve the Covid-19 Disability correlation study originally done by Chakrabo
 
 2\. Improve the format of the "missing data" table (line 351).
 
-3\. Add titles and numbers to the figures to help the reader refer to them from the discussion. This reproduced study has more figures than the original study, so it is necessary to label the figures in order to refer to them.
+3\. Adding numbers to the figures to help the reader refer to them from the discussion. This reproduced study has more figures than the original study, so it is necessary to label the figures in order to refer to them.
 
 ## Results: Visualization and Interpretation
 
@@ -23,7 +23,7 @@ To improve the Covid-19 Disability correlation study originally done by Chakrabo
 
 2\.  Reformatting the data table such that all of the data listed for the missing county is in one column will make all of the data visible on the page. This requires transposing the table.
 
-3\.  Adding titles will help the reader interpret figures (either as part of the discussion or standing alone) and make the discussion easier to follow.
+3\.  Adding figure numbers will help the reader interpret the discussion. Emily's discussion refers to figure numbers but none are actually labeled.
 
 ## Discussion
 
@@ -31,4 +31,4 @@ To improve the Covid-19 Disability correlation study originally done by Chakrabo
 
 2\.  Including all of the values of missing data gives the reader a sense of what values may be missing from the analysis and how including them might change the results.
 
-3\.  Adding titles will help the reader interpret figures, either as part of the discussion or standing alone. Numbered figures will also help the reader navigate the chronology of the paper (at least, it was confusing for me which is why I had to write down the line numbers of the figures I was working on). This change will help readers navigating directly to the figure instead of having to do the work to find it.
+3\. Numbered figures will also help the reader navigate the chronology of the paper (at least, it was confusing for me which is why I had to write down the line numbers of the figures I was working on). This change will help readers navigating directly to the figure instead of having to do the work to find it. It will also be easier for readers to interpret the discussion because they can match the visual to the discussion. 
