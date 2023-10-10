@@ -351,22 +351,18 @@ acs_covid <- acs_covid %>%
 ## Missing data
 
 **Unplanned deviation for reproduction**: There is one county with missing disability and poverty data.
-This was not mentioned in the original study or in our pre-analyis plan.
+This was not mentioned in the original study or in our pre-analysis plan.
 However, we replace the missing data with zeros, producing results identical to Chakraborty's.
 
-```{r missing data}
+```{r missing-data, eval=FALSE}
 # county with missing data
-filter(acs_covid, is.na(bpov_pct)) %>% st_drop_geometry() %>% kable()
-
-# replace NA with 0 for missing data
-acs_covid[is.na(acs_covid$bpov_pct), ]$bpov_pct <- 0
-acs_covid[is.na(acs_covid$apov_pct), ]$apov_pct <- 0
-
+# original visualization
+# filter(acs_covid, is.na(bpov_pct)) %>% st_drop_geometry() %>% kable()
 ```
 
 ### Revised Missing Data table
 
-```{r}
+```{r revise-data-table}
 missing_data <- acs_covid %>% 
   filter(is.na(bpov_pct)) %>% 
   st_drop_geometry()
@@ -376,12 +372,16 @@ missing_data[is.na(missing_data)] <- 0
 
 missing_data %>% 
   kable(
-    col.names = (""),
+    #col.names = (""),
     #row.names = c("FIPS","State","County","County, State", ""),
     caption = ("Counties with Missing Data")
     ) %>% 
   kable_styling()
-  
+
+
+# replace NA with 0 for missing data
+acs_covid[is.na(acs_covid$bpov_pct), ]$bpov_pct <- 0
+acs_covid[is.na(acs_covid$apov_pct), ]$apov_pct <- 0  
 ```
 
 ## Map COVID-19 incidence
@@ -434,6 +434,27 @@ tm_disability_rates <- tm_shape(acs_covid) +
   )
 
 tm_disability_rates
+```
+
+```{r map-white-pct, message = FALSE}
+# map another variable
+tm_white_pct <- tm_shape(acs_covid) +
+  tm_polygons("white_pct",
+    title = "Percent of White People\n(ACS 2014-2018)",
+    style = "quantile",
+    border.alpha = .2,
+    lwd = 0.2,
+    palette = "Oranges"
+  ) +
+  tm_shape(state) +
+  tm_borders("grey", lwd = .5) +
+  tm_layout(
+    legend.position = c("left", "bottom"),
+    legend.title.size = 0.8,
+    legend.text.size = 0.5
+  )
+
+tm_white_pct
 ```
 
 ## Descriptive statistics
