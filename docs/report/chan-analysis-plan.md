@@ -17,6 +17,8 @@ To improve the Covid-19 Disability correlation study originally done by Chakrabo
 
 3\. Adding numbers to the figures to help the reader refer to them from the discussion. This reproduced study has more figures than the original study, so it is necessary to label the figures in order to refer to them.
 
+4\. Add an additional visualization of a demographic factor of Census ACS data.
+
 ## Results: Visualization and Interpretation
 
 1\.  The new color ramp will have a wider range of values and will allow for smaller increments to be displayed on the map.
@@ -25,6 +27,8 @@ To improve the Covid-19 Disability correlation study originally done by Chakrabo
 
 3\.  Adding figure numbers will help the reader interpret the discussion. Emily's discussion refers to figure numbers but none are actually labeled.
 
+4\. Visualize a demographic variable with the same style as the disability map to compare spatial distribution of these factors.
+
 ## Discussion
 
 1\.  The revised map will better emphasize the highest and lowest weighted counties. 
@@ -32,3 +36,5 @@ To improve the Covid-19 Disability correlation study originally done by Chakrabo
 2\.  Including all of the values of missing data gives the reader a sense of what values may be missing from the analysis and how including them might change the results.
 
 3\. Numbered figures will also help the reader navigate the chronology of the paper (at least, it was confusing for me which is why I had to write down the line numbers of the figures I was working on). This change will help readers navigating directly to the figure instead of having to do the work to find it. It will also be easier for readers to interpret the discussion because they can match the visual to the discussion. 
+
+4\. In the same way the disability map was added to visualize the disability variable before putting it into the study, adding a demographic variable will aid our understanding of the input and output of the study. 

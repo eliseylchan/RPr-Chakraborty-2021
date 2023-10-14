@@ -1963,8 +1963,6 @@ ggsave(here("results", "figures", "plot_coefficients.png"), geewhisker_fig)
 
 ## Bias and threats to validity
 
-Given the research design and primary data to be collected and/or secondary data to be used, discuss common threats to validity and the approach to mitigating those threats, with an emphasis on geographic threats to validity.
-
 **Edge effects** were not accounted for in the analysis.
 
 The analysis created **spatial subgroups** based on **spatial clustering**.
@@ -2045,7 +2043,7 @@ This spatial visual analysis reveals many regions in which disability rates are 
 Conversely, many hotspots of COVID-19 incidence had low rates of disability, including metropolitan New England, South Florida, and Chicago.
 The two spatial distributions help explain the negative bivariate relationship between disability rates and COVID-19 incidence.
 
-The summary statistics for the analytical partof the reproduction analysis matched perfectly with those of the original study, confirming that the reproduction uses identical original data.
+The summary statistics for the analytical part of the reproduction analysis matched perfectly with those of the original study, confirming that the reproduction uses identical original data.
 The original study used Pearson's correlation to test bivariate relationship between variables that are non-normally distributed, and we revised this to use the nonparametric Spearman's correlation coefficient.
 Our reanalysis of the correlations generally found identical directions and increased magnitudes, confirming the bivariate correlations and significance levels of most of the socio-demographic subcategories.
 However, biological sex may not be correlated with COVID-19 incidence rates, as the percentage of females with disabilities changes direction and significance.
@@ -2109,6 +2107,8 @@ We quickly diagnosed whether the clustering method was significantly skewing the
 Fortunately, we found the GLM coefficients to be consistent, and in most cases stronger, than the GEE model coefficients.
 Future replications of this research should consider selecting an alternative inferential statistical model which explicitly accounts for spatial dependence.
 
+# Conclusion
+
 With regards to the **overall conclusions** and **research design**, we agree with the original author's cautious interpretation emphasizing "county-level associations" and the need for "additional data and analysis".
 There are at least five sources of uncertainty in this study: ecological fallacy, scale dependency, modifiable areal unit problem, variable measurement, and spatial dependency.
 There is a risk of ecological fallacy with this research design, whereby county-level statistics for the whole population should not be interpreted as definitive inferential proof of individual-level relationships, especially for populations comprising no more than one third of any county.
@@ -2120,7 +2120,7 @@ Finally, there are well-known problems with the testing and reporting of COVID-1
 This study partially mitigates measurement uncertainty by aggregating data across time (more than one year of the pandemic and the five-year ACS estimate) and into relatively large geographic units (counties).
 The study accounts for spatial dependency using the GEE models to cluster county observations by state and COVID risk classification.
 However, the GEE method simply uses correlation matrices to weight each county observation according to the number of observations in its cluster and the overall within-cluster correlation of standard errors.
-The spatial dependence between counties in different clusters is not modelled, even if the counties are adjacent to each other.
+The spatial dependence between counties in different clusters is not modeled, even if the counties are adjacent to each other.
 
 In sum, although some of our results differed from Chakraborty's because of differences in analytical methods, conceptualizations, and computational environments, our reproduction results still suggest that PwDs are likely to experience multiple jeopardy based on the convergence of their disability, racial/ethnic minority, and poverty status.
 We reiterate Chakraborty's carefully limited interpretation emphasizing county-level relationships and the need for additional data and research, because the estimated relationship at the county level may not hold at the individual level.
