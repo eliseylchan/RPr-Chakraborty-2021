@@ -1,6 +1,6 @@
 ---
 title: "Reproduction of Chakraborty 2021: An intracategorical analysis of COVID-19 and people with disabilities"
-author: "Joseph Holler, Junyi Zhou, Peter Kedron, Drew An-Pham, Derrick Burt"
+author: "Joseph Holler, Junyi Zhou, Peter Kedron, Drew An-Pham, Derrick Burt, Elise Chan"
 date: "`r Sys.Date()`"
 output: html_document
 editor_options:
@@ -2107,8 +2107,6 @@ We quickly diagnosed whether the clustering method was significantly skewing the
 Fortunately, we found the GLM coefficients to be consistent, and in most cases stronger, than the GEE model coefficients.
 Future replications of this research should consider selecting an alternative inferential statistical model which explicitly accounts for spatial dependence.
 
-# Conclusion
-
 With regards to the **overall conclusions** and **research design**, we agree with the original author's cautious interpretation emphasizing "county-level associations" and the need for "additional data and analysis".
 There are at least five sources of uncertainty in this study: ecological fallacy, scale dependency, modifiable areal unit problem, variable measurement, and spatial dependency.
 There is a risk of ecological fallacy with this research design, whereby county-level statistics for the whole population should not be interpreted as definitive inferential proof of individual-level relationships, especially for populations comprising no more than one third of any county.
@@ -2121,6 +2119,8 @@ This study partially mitigates measurement uncertainty by aggregating data acros
 The study accounts for spatial dependency using the GEE models to cluster county observations by state and COVID risk classification.
 However, the GEE method simply uses correlation matrices to weight each county observation according to the number of observations in its cluster and the overall within-cluster correlation of standard errors.
 The spatial dependence between counties in different clusters is not modeled, even if the counties are adjacent to each other.
+
+# Conclusion
 
 In sum, although some of our results differed from Chakraborty's because of differences in analytical methods, conceptualizations, and computational environments, our reproduction results still suggest that PwDs are likely to experience multiple jeopardy based on the convergence of their disability, racial/ethnic minority, and poverty status.
 We reiterate Chakraborty's carefully limited interpretation emphasizing county-level relationships and the need for additional data and research, because the estimated relationship at the county level may not hold at the individual level.
